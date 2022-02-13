@@ -2,7 +2,12 @@
 
 @font-face{font-family:'airbnb_cereal_medium'; src:url('fonts/Airbnb_Cereal-Medium.woff2')}
 
-
+#navbar {
+    position: sticky;
+    top:0;
+    background-color: white;
+    border-bottom: 1px solid #DDDDDD;
+}
 
 .nav-bar {
     display: flex;
@@ -117,6 +122,27 @@
     
 }
 
+.search-button-box {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+}
+
+.search-button {
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    height: 48px;
+    width: 300px;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .main {
     display: flex;
     flex-direction: row;
@@ -156,9 +182,28 @@
     flex-basis: 0;
 }
 
+
 .house-list {
     display: flex;
     flex-direction: column;
+}
+
+.house-box {
+    flex-grow: 1;
+}
+
+.house-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.house-image {
+    width: 300px;
+    height: 200px;
+}
+
+.house-info {
+    flex-grow: 1;
 }
 
 .map {

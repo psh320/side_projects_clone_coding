@@ -10,6 +10,7 @@
     width: 100%;
     display: block;
     transition: top 0.3s;
+    border-bottom: 1px solid #DDDDDD;
   }
 
 .main_header {
@@ -68,10 +69,8 @@
 .option-button {
     position: relative;
     cursor: pointer;
-    border-color: black;
     border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
+    border: none;
     outline: none;
     background: transparent;
     color: white;
@@ -125,10 +124,8 @@
 .lang-button {
     position: relative;
     cursor: pointer;
-    border-color: black;
     border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
+    border: none;
     outline: none;
     background: transparent;
     color: white;
