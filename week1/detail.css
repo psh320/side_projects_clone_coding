@@ -1,9 +1,18 @@
+@font-face{font-family:'airbnb_cereal_book'; src:url('fonts/Airbnb_Cereal-Book.woff2')}
+@font-face{font-family:'airbnb_cereal_medium'; src:url('fonts/Airbnb_Cereal-Medium.woff2')}
+
+.font {
+    font-family: airbnb_cereal_medium;
+}
+
 .nav-bar {
     display: flex;
-    min-width: 1300px;
+    min-width: 1000px;
     min-height: 80px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-left: 83px;
+    margin-right: 83px;
     flex-direction: row;
     color:#FFFFFF
 }
@@ -150,4 +159,34 @@
     padding: 0px;
     align-items: center;
     text-align: center;
+}
+
+.detail-main {
+    padding-left: 83px;
+    padding-right: 83px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.detail-row1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.row1-etc {
+    display: flex;
+    align-items: center;
+}
+
+.etc1 {
+    flex: 1 1 auto;
+}
+
+.detail-row2 {
+    display: flex;
+}
+
+.detail2 {
+    display:flex;
+    flex-direction: row;
 }
