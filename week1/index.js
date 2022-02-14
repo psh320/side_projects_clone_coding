@@ -9,3 +9,5 @@ function scrollFunction() {
     document.getElementById("searchbar").style.opacity = "1";
   }
 }
+
+

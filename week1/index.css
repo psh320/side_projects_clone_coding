@@ -11,6 +11,7 @@
     display: block;
     transition: top 0.3s;
     border-bottom: 1px solid #DDDDDD;
+    z-index: 100;
   }
 
 .search-button {
