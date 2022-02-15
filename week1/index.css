@@ -14,6 +14,29 @@
     z-index: 100;
   }
 
+  .logo-image1 {
+    color:#FF385C;
+    display: inline-flex;
+    vertical-align: middle;
+    z-index: 1;
+    height:80px;
+    align-items: center;
+    
+}
+
+  .host1 {
+    background: transparent;
+    border: 0px;
+    display:inline-block;
+    font-size: 14px;
+    font-family: airbnb_cereal_book;
+    font-weight: 600;
+    line-height: 18px;
+    z-index: 1;
+    color: black;
+    padding: 12px;
+}
+
 .search-button {
     cursor:pointer;
     display: flex;
