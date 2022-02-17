@@ -2,6 +2,10 @@
 
 @font-face{font-family:'airbnb_cereal_medium'; src:url('fonts/Airbnb_Cereal-Medium.woff2')}
 
+.font {
+    font-family: airbnb_cereal_book;
+}
+
 #navbar {
     position: sticky;
     top:0;
