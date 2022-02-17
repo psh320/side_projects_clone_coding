@@ -54,7 +54,7 @@ const Header = () => {
                                 <div>
                                     <ThreeLine />
                                 </div>
-                                <div>
+                                <div className="_retf">
                                     <UserShape width="30" height="30" />
                                 </div>
                             </button>
@@ -63,6 +63,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
+        
     );
 }
 

@@ -1,11 +1,14 @@
 .corona {
+    position: fixed;
     min-width: 1300px;
     width: auto;
     text-align: center;
     padding-top: 18px;
     padding-bottom: 18px;
 }
-
+.color {
+    background-color: black;
+}
 .nav-bar {
     display: flex;
     min-width: 1300px;
@@ -13,6 +16,7 @@
     padding-left: 80px;
     padding-right: 80px;
     flex-direction: row;
+    background-color: black;
 }
 
 .space1 {
@@ -127,4 +131,213 @@
 .no-underline {
     text-decoration: none;
     font-family: airbnb_cereal_book;
+}
+.no-border {
+    border: none;
+}
+
+._retf {
+    padding-left: 10px;
+}
+
+.search-bar {
+    display: flex;
+    border : 1px solid white;
+    width: 848px;
+    height: 64px;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 32px;
+    background-color: white;
+    margin-bottom: 40px;
+    opacity: 1;
+    transition: top 0.3;
+}
+.searchbar1{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 14px 32px 14px 32px;
+    border-radius: 32px;
+}
+.searchbar2{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 14px 32px 14px 32px;
+    border-radius: 32px;
+}
+.searchbar3{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 14px 32px 14px 32px;
+    border-radius: 32px;
+}
+.searchbar4{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 14px 32px 14px 32px;
+    border-radius: 32px;
+    display:flex;
+    align-items: center;
+}
+
+.search-label {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding-bottom: 2px;
+    font-family: airbnb_cereal_book;
+}
+
+.line {
+    align-self:center;
+    border-right: 1px solid #DDDDDD;
+    flex: 0 0 0px;
+    height: 32px;
+}
+
+.search-button1 {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+    z-index: 0;
+    background-color: #FF385C;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+}
+
+.inputs {
+    flex: 1 0 0%;
+    padding: 1px;
+}
+
+.search-icon1 {
+    text-align: center;
+}
+
+.center {
+    padding-bottom: 96px;
+}
+
+
+.grid1 {
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr);
+    grid-template-rows: minmax(0px, 1fr);
+    width : 1300px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(https://a0.muscache.com/im/pictures/ce7d8ae6-977b-4031-b800-762ac4daf347.jpg?im_w=960);
+    background-size: cover;
+}
+.grid1-1 {
+    display: grid;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 72px;
+}
+.flex4 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.text {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 24px;
+    text-align: center;
+    font-family: airbnb_cereal_book;
+    color:#FFFFFF; 
+    font-size:38px; 
+    font-weight:600; 
+    letter-spacing:-0.02em; 
+    line-height: 43px;
+}
+.more-button {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    height: 48px;
+    background-color:white;
+    border-radius:1000px;
+    text-align: center;
+    align-items: center;
+    
+}
+.button1 {
+    width: 120px;
+    height: 48px;
+    
+}
+
+
+.banner2 {
+    padding-top: 96px;
+}
+.banner2-box1 {
+    display: flex;
+    flex-direction: row;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-bottom: 48px;
+}
+.head-text {
+    font-size: 42px;
+    font-family: airbnb_cereal_medium;
+}
+
+
+
+.banner3 {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+.banner3-box2 {
+    display: grid;
+    grid-template-columns: minmax(0,1fr)  minmax(0,1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: 1fr;
+    column-gap: 24px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+
+.banner4 {
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+    flex-direction: column;
+    padding:80px;
+    height: 508px;
+    background-size: cover;
+    border-radius: 12px;
+    margin-bottom: 48px;
+}
+.head4 {
+    color:#FFFFFF;
+    font-size: 95px;
+    font-weight: 600;
+    line-height: 105px;
+    letter-spacing: -0.02em;
+    font-family: airbnb_cereal_medium;
+    padding-bottom: 160px;
 }

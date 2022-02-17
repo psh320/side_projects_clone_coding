@@ -1,0 +1,31 @@
+.exp-image {
+    background-size: cover;
+    min-height: 750px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.item-flex {
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+}
+
+.head3 {
+    font-size: 53px;
+    font-weight:600;
+    letter-spacing: -0.02em;
+    line-height: 60px;
+    font-family: airbnb_cereal_book;
+    color:#FFFFFF;
+    padding-bottom: 24px;
+}
+
+.link-button {
+    background-color: #FFFFFF;
+    padding: 14px 24px;
+    width:fit-content;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: airbnb_cereal_book;
+}

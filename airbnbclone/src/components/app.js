@@ -10,9 +10,9 @@ import './App.css';
 const App = () => {
     return ( 
         <div>
-            <Header />
             <BrowserRouter>
                 <div>
+                    <Header />
                     <Route path="/" exact component={Main}/>
                     <Route path="/s" exact component={SearchHouse} />
                 </div>
