@@ -1,0 +1,130 @@
+.corona {
+    min-width: 1300px;
+    width: auto;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.nav-bar {
+    display: flex;
+    min-width: 1300px;
+    min-height: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    flex-direction: row;
+}
+
+.space1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex1 {
+    flex-grow: 2;
+    flex-basis: 0;
+}
+
+.logo-image {
+    color:#FFFFFF;
+    display: inline-flex;
+    vertical-align: middle;
+    z-index: 1;
+    height:80px;
+    align-items: center;
+    
+}
+
+.flex2 {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.option-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80px;
+}
+
+.option-button {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    min-height:40px;
+    font-size: 16px;
+    font-family: airbnb_cereal_book;
+}
+.option-text {
+    padding: 10px 16px;
+}
+.text1 {
+    color: white;
+    font-size: 16px;
+}
+
+.flex3 {
+    flex-grow: 2;
+    flex-basis: 0;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80px;
+}
+.login {
+    background: transparent;
+    border: 1px solid #DDDDDD;
+    color: #222222;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 5px 5px 5px 12px;
+    text-decoration: none;
+    background-color: white;
+    vertical-align: middle;
+    height: 42px;
+    width: 77px;
+    border-radius: 21px;
+    z-index: 1;
+    align-items: center;
+}
+.etc {
+    display:flex;
+    flex: auto;
+    justify-content: flex-end;
+    margin-right: 8px;
+}
+
+.lang-button {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 12px;
+}
+
+.host {
+    background: transparent;
+    border: 0px;
+    display:inline-block;
+    font-size: 14px;
+    font-family: airbnb_cereal_book;
+    font-weight: 600;
+    line-height: 18px;
+    z-index: 1;
+    color: white;
+    padding: 12px;
+}
+.no-underline {
+    text-decoration: none;
+    font-family: airbnb_cereal_book;
+}
