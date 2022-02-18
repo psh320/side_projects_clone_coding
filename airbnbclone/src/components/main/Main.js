@@ -34,7 +34,7 @@ const Main = () => {
                         <div className="searchbar4">
                             <div role="button" className="inputs">
                                 <label className="search-label">인원</label>
-                                <div className="placeholder">게스트 추가</div>
+                                <div className="placeholder font">게스트 추가</div>
                             </div>
 
                             <div className="submit">
@@ -124,6 +124,15 @@ const Main = () => {
                             button_text ="온라인 체험"
                         />
                     </div>
+                </div>
+
+                <div className="banner4" style={{"background-image": "url(https://a0.muscache.com/im/pictures/0528b0f7-4c0c-47bc-9786-d91454f531ba.jpg?im_w=1440)"}}>
+                    <div className="head4">
+                        호스팅에 관해<br/> 궁금하신 점이<br/> 있나요?
+                    </div>
+                    <a href="#">
+                        <div className="link-button">슈퍼호스트에게 물어보세요</div>
+                    </a>
                 </div>
             </div>
                 

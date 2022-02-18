@@ -1,3 +1,6 @@
+.font {
+    font-family: airbnb_cereal_book;
+}
 .corona {
     position: fixed;
     min-width: 1300px;
