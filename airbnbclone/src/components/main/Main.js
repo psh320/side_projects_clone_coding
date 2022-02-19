@@ -1,52 +1,130 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "./Main.css";
 import { ReactComponent as SearchIcon} from "../../assets/search_icon.svg";
+import { ReactComponent as Lang} from "../../assets/lang.svg";
+import { ReactComponent as ThreeLine} from "../../assets/three_line.svg";
+import { ReactComponent as UserShape} from "../../assets/user_shape.svg";
+import { ReactComponent as Logo} from "../../assets/logo.svg";
 import TravelCard from "./TravelCard";
 import ExpCard from "./ExpCard";
+import Header from "../Header";
 
 const Main = () => {
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const updateScroll = () => {
+        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', updateScroll);
+    });
+    console.log(scrollPosition);
+
     return (
         <div>
+            <aside className="corona">
+                <a href="#" >
+                    <span className="font">에어비엔비의 코로나19 대응 방안에 대한 최신 정보를 확인하세요.</span>
+                </a>
+            </aside>
+            <div className="toggle_header" style={scrollPosition < 95 ? {top: "-150px"} :{top: "0px"}}>
+                <Header isMain={true} />
+            </div>
             <div className="color">
-                <form id="search">
-                    <div className="search-bar" id="searchbar">
-                        <div className="searchbar1">
-                            <div>
-                                <label className="search-label">위치</label>
-                                <input className="no_border" placeholder="어디로 여행가세요?"/>
-                            </div>
-                        </div>
-                        <div className="line"></div>
-                        <div className="searchbar2">
-                            <label className="search-label">체크인</label>
-                            <div>
-                                <input placeholder="날짜 입력"/>
-                            </div>
-                        </div>
-                        <div className="line"></div>
-                        <div className="searchbar3">
-                            <label className="search-label">체크아웃</label>
-                            <div>
-                                <input placeholder="날짜 입력"/>
-                            </div>
-                        </div>
-                        <div className="line"></div>
-                        <div className="searchbar4">
-                            <div role="button" className="inputs">
-                                <label className="search-label">인원</label>
-                                <div className="placeholder font">게스트 추가</div>
-                            </div>
-
-                            <div className="submit">
-                                <button className="search-button1">
-                                    <div className="search-icon1">
-                                        <SearchIcon />
+                <div style={scrollPosition < 95 ? {visibility: "visible"} :{visibility: "hidden"}}>
+                    <div className="nav-bar-main">
+                        <div className="flex1-main">
+                            <div className="space1-main">
+                                <a className="logo-image-main" href="#">
+                                    <div>
+                                        <Logo />
                                     </div>
-                                </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex2-main">
+                            <div className="option-box-main">
+                                    <button className="option-button-main">
+                                        <span className="option-text-main">숙소</span>
+                                    </button>
+                                    <button className="option-button-main">
+                                        <span className="option-text-main">체험</span>
+                                    </button>
+                                    <div>
+                                        <a href="#" className="no-underline text1-main">
+                                            <div className="option-text-main">
+                                                온라인 체험
+                                            </div>
+                                        </a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div className="flex3-main">
+                            <div className="login-box-main">
+                                <div className="etc-main">
+                                    <a href="#" className="host no-underline">
+                                        <div>호스트 되기</div>
+                                    </a>
+                                    <button className="lang-button-main">
+                                        <div><Lang /></div>
+                                    </button>
+                                    
+                                </div>
+                                <div>
+                                    <div>
+                                        <button type="button" className="login-main">
+                                            <div>
+                                                <ThreeLine />
+                                            </div>
+                                            <div className="_retf">
+                                                <UserShape width="30" height="30" />
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <form id="search">
+                        <div className="search-bar" id="searchbar">
+                            <div className="searchbar1">
+                                <div>
+                                    <label className="search-label">위치</label>
+                                    <input className="no_border" placeholder="어디로 여행가세요?"/>
+                                </div>
+                            </div>
+                            <div className="line"></div>
+                            <div className="searchbar2">
+                                <label className="search-label">체크인</label>
+                                <div>
+                                    <input placeholder="날짜 입력"/>
+                                </div>
+                            </div>
+                            <div className="line"></div>
+                            <div className="searchbar3">
+                                <label className="search-label">체크아웃</label>
+                                <div>
+                                    <input placeholder="날짜 입력"/>
+                                </div>
+                            </div>
+                            <div className="line"></div>
+                            <div className="searchbar4">
+                                <div role="button" className="inputs">
+                                    <label className="search-label">인원</label>
+                                    <div className="placeholder font">게스트 추가</div>
+                                </div>
+
+                                <div className="submit">
+                                    <button className="search-button1">
+                                        <div className="search-icon1">
+                                            <SearchIcon />
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div className="center">
                     <div className="grid1">
                         <div className="grid1-1">
@@ -126,7 +204,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <div className="banner4" style={{"background-image": "url(https://a0.muscache.com/im/pictures/0528b0f7-4c0c-47bc-9786-d91454f531ba.jpg?im_w=1440)"}}>
+                <div className="banner4" style={{"backgroundImage": "url(https://a0.muscache.com/im/pictures/0528b0f7-4c0c-47bc-9786-d91454f531ba.jpg?im_w=1440)"}}>
                     <div className="head4">
                         호스팅에 관해<br/> 궁금하신 점이<br/> 있나요?
                     </div>

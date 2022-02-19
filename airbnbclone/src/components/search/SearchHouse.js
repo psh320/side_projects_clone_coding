@@ -1,9 +1,13 @@
 import React from "react";
-
+import './SearchHouse.css';
+import Header from "../Header";
 class SearchHouse extends React.Component {
     render() {
         return (
-            <div>Search page</div>
+            <div>
+                <Header isMain={false}/>
+                Search Page
+            </div>
         );
     }
 }

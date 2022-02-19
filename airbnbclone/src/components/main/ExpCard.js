@@ -3,7 +3,7 @@ import "./ExpCard.css";
 
 const ExpCard = (props) => {
     return (
-        <div className="exp-image" style={{"background-image" : props.image}}>
+        <div className="exp-image" style={{"backgroundImage" : props.image}}>
             <div className="item-flex">
                 <div className="head3">{props.text}</div>
                 <a href="#">
