@@ -62,7 +62,7 @@ const Main = () => {
                         <div className="flex3-main">
                             <div className="login-box-main">
                                 <div className="etc-main">
-                                    <a href="#" className="host no-underline">
+                                    <a href="#" className="host-main no-underline">
                                         <div>호스트 되기</div>
                                     </a>
                                     <button className="lang-button-main">
