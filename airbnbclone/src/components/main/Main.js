@@ -18,7 +18,8 @@ const Main = () => {
     useEffect(()=>{
         window.addEventListener('scroll', updateScroll);
     });
-    console.log(scrollPosition);
+    
+    const [isSearch, setIsSearch] = useState(false)
 
     return (
         <div>
@@ -28,7 +29,7 @@ const Main = () => {
                 </a>
             </aside>
             <div className="toggle_header" style={scrollPosition < 95 ? {top: "-150px"} :{top: "0px"}}>
-                <Header isMain={true} />
+                <Header isMain={true} onSelectSearch={setIsSearch}/>
             </div>
             <div className="color">
                 <div style={scrollPosition < 95 ? {visibility: "visible"} :{visibility: "hidden"}}>

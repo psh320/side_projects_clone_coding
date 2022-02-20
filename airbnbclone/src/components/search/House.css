@@ -1,0 +1,65 @@
+.house {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.house-row {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+.house-row1 {
+    display: flex;
+    flex: 0 1 auto;
+}
+
+.house-name {
+    width: 100%;
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.house-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.house-box {
+    flex-grow: 1;
+}
+
+.house-detail {
+    display: flex;
+    flex-direction: row;
+    padding: 24px 0px 24px 24px;
+    border-top: 1px solid #DDDDDD;
+
+    margin-right: 24px;
+}
+
+.house-image {
+    width: 300px;
+    height: 200px;
+}
+
+.house-info {
+    flex-grow: 1;
+    padding: 8px 8px 0px 12px;
+}
+.house-row2 {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+.house-rate {
+    display: flex;
+    align-items: flex-end;
+    flex:1 0 auto;
+}
+
+.seperate {
+    margin-top:11px; 
+    width:32px; 
+    border-bottom: 1px solid #dddddd; 
+    height: 1px;
+}

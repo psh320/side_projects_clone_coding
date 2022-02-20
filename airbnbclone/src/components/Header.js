@@ -20,11 +20,13 @@ const Header = (props) => {
 
     useEffect(()=> {
         SetSearchbar(false);
+        props.onSelectSearch(false)
     },[scrollPos])
     const onclick_toggle = () => {
         SetSearchbar(true);
+        props.onSelectSearch(true)
     }
-    console.log(searchbar, scrollPos)
+
     const onlineExp = () => {
         if (props.isMain) {
             return (

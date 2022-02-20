@@ -2,7 +2,7 @@
     font-family: airbnb_cereal_book;
 }
 
-#navbar {
+.search-header {
     position: sticky;
     top:0;
     background-color: white;
@@ -172,4 +172,65 @@
     padding: 0px;
     align-items: center;
     text-align: center;
+}
+
+.options-box {
+    padding: 8px 24px 12px;
+}
+
+.options-flex {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.options-button {
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    width: 100%;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    color: black;
+    background-color: white;
+    border: 1px solid rgb( 221,221,221);
+    text-align: center;
+}
+.options-items {
+    display: inline-block;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+}
+.options-important {
+    display:flex;
+    align-items: center;
+}
+.options-etc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1 1 0;
+}
+
+.options-etc > .options-items:first-child {
+    padding-left:8px;
+}
+
+.main-search {
+    display: flex;
+    flex-direction: row;
+    padding-left: 24px;
+    padding-right: 24px;
+} 
+
+.map {
+    flex-grow: 0.7;
+    background-color: #dddddd;
+    flex-basis: 0;
 }
