@@ -175,7 +175,7 @@
 }
 
 .options-box {
-    padding: 8px 24px 12px;
+    padding: 46px 24px 12px;
 }
 
 .options-flex {
@@ -227,7 +227,8 @@
     flex-direction: row;
     padding-left: 24px;
     padding-right: 24px;
-} 
+}
+
 
 .map {
     flex-grow: 0.7;

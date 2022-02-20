@@ -13,6 +13,7 @@ const Header = (props) => {
     const [scrollPos, setScrollPos] = useState(0);
     const updateScroll = () => {
         setScrollPos(window.scrollY || document.documentElement.scrollTop);
+        props.setScrollPos(window.scrollY || document.documentElement.scrollTop)
     }
     useEffect(()=>{
         window.addEventListener('scroll', updateScroll);
@@ -26,7 +27,6 @@ const Header = (props) => {
         SetSearchbar(true);
         props.onSelectSearch(true)
     }
-
     const onlineExp = () => {
         if (props.isMain) {
             return (

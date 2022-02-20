@@ -11,13 +11,13 @@ import Header from "../Header";
 
 const Main = () => {
 
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const updateScroll = () => {
-        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    }
-    useEffect(()=>{
-        window.addEventListener('scroll', updateScroll);
-    });
+    const [scrollPos, setScrollPos] = useState(0);
+    // const updateScroll = () => {
+    //     setScrollPos(window.scrollY || document.documentElement.scrollTop);
+    // }
+    // useEffect(()=>{
+    //     window.addEventListener('scroll', updateScroll);
+    // });
     
     const [isSearch, setIsSearch] = useState(false)
 
@@ -28,11 +28,11 @@ const Main = () => {
                     <span className="font">에어비엔비의 코로나19 대응 방안에 대한 최신 정보를 확인하세요.</span>
                 </a>
             </aside>
-            <div className="toggle_header" style={scrollPosition < 95 ? {top: "-150px"} :{top: "0px"}}>
-                <Header isMain={true} onSelectSearch={setIsSearch}/>
+            <div className="toggle_header" style={scrollPos < 95 ? {top: "-150px"} :{top: "0px"}}>
+                <Header isMain={true} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
             </div>
             <div className="color">
-                <div style={scrollPosition < 95 ? {visibility: "visible"} :{visibility: "hidden"}}>
+                <div style={scrollPos < 95 ? {visibility: "visible"} :{visibility: "hidden"}}>
                     <div className="nav-bar-main">
                         <div className="flex1-main">
                             <div className="space1-main">

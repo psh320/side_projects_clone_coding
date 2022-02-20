@@ -82,10 +82,16 @@ const SearchHouse = () => {
 
     // Get Header status
     const [isSearch, setIsSearch] = useState(false)
+    const [scrollPos, setScrollPos] = useState(0);
+    useEffect(()=> {
+        setIsSearch(false);
+        
+    },[scrollPos])
+    console.log(isSearch)
     return(
         <div>
             <div className="search-header">
-                <Header isMain={false} onSelectSearch={setIsSearch}/>
+                <Header isMain={false} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
                 <div className="options-box" style={isSearch ? {display:'none'}:{display:'block'}}>
                     <div className="options-flex">
                         <div className="options-important">
