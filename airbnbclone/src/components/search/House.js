@@ -43,7 +43,7 @@ const House = (props) => {
                                 </div>
                                 <div class="house-price">
                                     <div>₩{house.price} / 박</div>
-                                    <div style={{textAlign: "right", fontSize: "14px"}}>총액 ₩{house.price * house.days}}</div>
+                                    <div style={{textAlign: "right", fontSize: "14px"}}>총액 ₩{house.price * house.days}</div>
                                 </div>
                             </div>
                         </div>
