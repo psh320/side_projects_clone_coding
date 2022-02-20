@@ -28,7 +28,7 @@ const Header = (props) => {
         props.onSelectSearch(true)
     }
     const onlineExp = () => {
-        if (props.isMain) {
+        if (props.pageType == "main") {
             return (
                 <div>
                     <a href="#" className="no-underline text1">
@@ -42,10 +42,19 @@ const Header = (props) => {
             return null;
         }
     }
+    const paddingType = () => {
+        if (props.pageType == "main") {
+            return "padding-main header";
+        } else if(props.pageType == "rooms") {
+            return "padding-rooms header";
+        } else {
+            return "header";
+        }
+    }
 
     return (
-        <div className={props.isMain ? "padding-main header" : "header"} >
-            <div className="nav-bar">
+        <div className={paddingType()} >
+            <div className="nav-bar" style={props.pageType == "rooms" ? {minWidth: "1000px"}: {minWidth: "1300px"}}>
                 <div className="flex1">
                     <div className="space1">
                         <a className="logo-image" href="#">

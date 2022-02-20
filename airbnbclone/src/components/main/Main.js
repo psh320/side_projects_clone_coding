@@ -12,14 +12,7 @@ import Header from "../Header";
 const Main = () => {
 
     const [scrollPos, setScrollPos] = useState(0);
-    // const updateScroll = () => {
-    //     setScrollPos(window.scrollY || document.documentElement.scrollTop);
-    // }
-    // useEffect(()=>{
-    //     window.addEventListener('scroll', updateScroll);
-    // });
-    
-    const [isSearch, setIsSearch] = useState(false)
+    const [isSearch, setIsSearch] = useState(false);
 
     return (
         <div>
@@ -29,7 +22,7 @@ const Main = () => {
                 </a>
             </aside>
             <div className="toggle_header" style={scrollPos < 95 ? {top: "-150px"} :{top: "0px"}}>
-                <Header isMain={true} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
+                <Header pageType={"main"} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
             </div>
             <div className="color">
                 <div style={scrollPos < 95 ? {visibility: "visible"} :{visibility: "hidden"}}>

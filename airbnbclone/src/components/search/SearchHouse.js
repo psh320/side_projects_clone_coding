@@ -91,7 +91,7 @@ const SearchHouse = () => {
     return(
         <div>
             <div className="search-header">
-                <Header isMain={false} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
+                <Header pageType={"search"} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
                 <div className="options-box" style={isSearch ? {display:'none'}:{display:'block'}}>
                     <div className="options-flex">
                         <div className="options-important">
@@ -178,12 +178,12 @@ const SearchHouse = () => {
             
             <div className="main-search">
                 <div className="house">
-                    <div class="warning">
-                        <div class="font">지도에 표시된 지역에 위치한 300개 이상의 숙소</div>
-                        <div class="font">예약하기 전에 코로나19 관련 여행 제한 사항을 확인하세요.</div>
+                    <div className="warning">
+                        <div className="font">지도에 표시된 지역에 위치한 300개 이상의 숙소</div>
+                        <div className="font">예약하기 전에 코로나19 관련 여행 제한 사항을 확인하세요.</div>
                     </div>
 
-                    <div class="house-list">
+                    <div className="house-list">
                          <House data={dummydata}/>
                     </div>
 

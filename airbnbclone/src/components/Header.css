@@ -1,9 +1,14 @@
 .header {
-    min-width:1300px;
     min-height: 80px;
     background-color: white;
 }
 
+.padding-rooms {
+    padding-left: 56px;
+    padding-right: 56px;
+    margin-left: 83px;
+    margin-right: 83px;
+}
 .padding-main {
     padding-left: 56px;
     padding-right: 56px;
