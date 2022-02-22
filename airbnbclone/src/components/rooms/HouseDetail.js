@@ -255,7 +255,7 @@ const HouseDetail = () => {
                         4.64 · 후기 1,242개
                     </div>
                     <div class="d3r1-rate">
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">청결도</div>
                                 <div class="rate-bar">
@@ -266,7 +266,7 @@ const HouseDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">정확성</div>
                                 <div class="rate-bar">
@@ -277,7 +277,7 @@ const HouseDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">의사소통</div>
                                 <div class="rate-bar">
@@ -288,7 +288,7 @@ const HouseDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">위치</div>
                                 <div class="rate-bar">
@@ -299,7 +299,7 @@ const HouseDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">체크인</div>
                                 <div class="rate-bar">
@@ -310,7 +310,7 @@ const HouseDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{marginBottom: "16px"}}>
+                        <div>
                             <div class="rate-box">
                                 <div class="rate-name">가격 대비 만족도</div>
                                 <div class="rate-bar">
@@ -324,8 +324,95 @@ const HouseDetail = () => {
 
                     </div>
                     <div class="d3r1-reviews">
-                        test
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>깨끗하고 편안하고 따뜻하고 예쁜, 나만 알고 싶은 숙소</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>이번이 두번째 오소록하우스 방문인데 다시와도 정말 완벽한 숙소입니다 🤍 인테리어 하나하나 다 신경쓰신게 느껴지고 인스타 감성 숙소 그 자체에요. 정말 세세한거까지 다 갖춰져있어서 옷만 챙겨오면 불편함없이 생활 가능해요! 숙소 냄새도 짱 좋아요. 주방에도 조리도구들 다 있어서 요리해먹기 정말 편하고 호스트님도 너무너무 친절하시답니다 ❤️ 이미 너무 인기가 많아서 예약하기 쉽진않겠지만 ,,ㅎㅎ 기회가 된다면 다른 분들도 꼭 와보셨으면 좋겠어요 !</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>깨끗하고 편안하고 따뜻하고 예쁜, 나만 알고 싶은 숙소</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>깨끗하고 편안하고 따뜻하고 예쁜, 나만 알고 싶은 숙소</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>깨끗하고 편안하고 따뜻하고 예쁜, 나만 알고 싶은 숙소</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-user">
+                                <div class="user-image">
+                                    <img src={dummydata[0].reviews[0].profile} style={{width:"100%", height: "100%", borderRadius: "50%"}}/>
+                                </div>
+                                <div class="font" style={{marginLeft: "12px"}}>
+                                    한미
+                                    <div style={{fontSize:14, color:"#717171"}}>2022년 2월</div>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <span>깨끗하고 편안하고 따뜻하고 예쁜, 나만 알고 싶은 숙소</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div class="detail3-row2">
+                    Google Map library
                 </div>
             </div>
         </div>
