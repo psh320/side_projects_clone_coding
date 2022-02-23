@@ -87,7 +87,6 @@ const SearchHouse = () => {
         setIsSearch(false);
         
     },[scrollPos])
-    console.log(isSearch)
     return(
         <div>
             <div className="search-header">

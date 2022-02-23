@@ -9,6 +9,7 @@ import TravelCard from "./TravelCard";
 import ExpCard from "./ExpCard";
 import Header from "../Header";
 
+
 const Main = () => {
 
     const [scrollPos, setScrollPos] = useState(0);

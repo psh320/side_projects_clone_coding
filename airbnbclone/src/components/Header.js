@@ -6,10 +6,10 @@ import { ReactComponent as UserShape} from "../assets/user_shape.svg";
 import { ReactComponent as Logo} from "../assets/logo.svg";
 import { ReactComponent as SearchIcon} from "../assets/search_icon.svg";
 import "./Header.css";
+import Calendar from './Calendar';
 
 const Header = (props) => {
     const [searchbar, SetSearchbar] = useState(false);
-    
     const [scrollPos, setScrollPos] = useState(0);
     const updateScroll = () => {
         setScrollPos(window.scrollY || document.documentElement.scrollTop);
@@ -22,11 +22,18 @@ const Header = (props) => {
     useEffect(()=> {
         SetSearchbar(false);
         props.onSelectSearch(false)
+        setOpenCalendar(false);
     },[scrollPos])
     const onclick_toggle = () => {
         SetSearchbar(true);
         props.onSelectSearch(true)
     }
+
+    const [openCalendar, setOpenCalendar] = useState(false);
+    const toggle_calendar = () => {
+        setOpenCalendar(true);
+    }
+
     const onlineExp = () => {
         if (props.pageType == "main") {
             return (
@@ -124,17 +131,20 @@ const Header = (props) => {
                             </div>
                         </div>
                         <div className="line"></div>
-                        <div className="searchbar2">
-                            <label className="search-label">체크인</label>
-                            <div>
-                                <input placeholder="날짜 입력"/>
+                        <div className="searchbar2" onClick={toggle_calendar}>
+                            <div role="button" className="inputs">
+                                <label className="search-label">체크인</label>
+                                <div className="placeholder font">게스트 추가</div>
+                            </div>
+                            <div className="calendar-box" style={openCalendar ? {display:"flex"}:{display:"none"}}>
+                                <Calendar />
                             </div>
                         </div>
                         <div className="line"></div>
-                        <div className="searchbar3">
-                            <label className="search-label">체크아웃</label>
-                            <div>
-                                <input placeholder="날짜 입력"/>
+                        <div className="searchbar3" onClick={toggle_calendar}>
+                            <div role="button" className="inputs">
+                                <label className="search-label">체크아웃</label>
+                                <div className="placeholder font">게스트 추가</div>
                             </div>
                         </div>
                         <div className="line"></div>
