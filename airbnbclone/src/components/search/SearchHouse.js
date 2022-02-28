@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import './SearchHouse.css';
 import Header from "../Header";
 import House from "./House";
+import GoogleMap from '../GoogleMap';
 const SearchHouse = () => {
 
     const dummydata = [
@@ -70,7 +71,11 @@ const SearchHouse = () => {
             ]
         },
     ]
-
+    const ref = useRef(null);
+    const [map_width, set_map_width] = useState(0);
+    useEffect(()=> {
+        set_map_width(ref.current.offsetWidth)
+    })
     // Get width for options responsive
     const [width, setWidth] = useState(0);
     const updateWidth = () => {
@@ -187,8 +192,8 @@ const SearchHouse = () => {
                     </div>
 
                 </div>
-                <div className="map">
-
+                <div className="map" ref={ref}>
+                    <GoogleMap google={window.google} width={map_width} />
                 </div>
             </div>
         </div>
