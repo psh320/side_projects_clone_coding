@@ -18,7 +18,6 @@ const GoogleMap = (props) => {
             zoom={8}
             style={mapStyles}
             initialCenter={{ lat: 0, lng: 0}}
-            containerStyle={{ position: "relative", display: "block"}}
             />
         </div>
     );
