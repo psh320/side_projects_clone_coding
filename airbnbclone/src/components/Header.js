@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Link from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { ReactComponent as Lang} from "../assets/lang.svg";
 import { ReactComponent as ThreeLine} from "../assets/three_line.svg";
 import { ReactComponent as UserShape} from "../assets/user_shape.svg";
@@ -38,11 +38,11 @@ const Header = (props) => {
         if (props.pageType == "main") {
             return (
                 <div>
-                    <a href="#" className="no-underline text1">
+                    <Link to="#" className="no-underline text1">
                         <div className="option-text">
                             온라인 체험
                         </div>
-                    </a>
+                    </Link>
                 </div>
             );
         } else {
@@ -64,11 +64,11 @@ const Header = (props) => {
             <div className="nav-bar" style={props.pageType == "rooms" ? {minWidth: "1000px"}: {minWidth: "1300px"}}>
                 <div className="flex1">
                     <div className="space1">
-                        <a className="logo-image" href="#">
+                        <Link className="logo-image" to="/">
                             <div>
                                 <Logo />
                             </div>
-                        </a>
+                        </Link>
                         
                     </div>
                 </div>
@@ -85,21 +85,25 @@ const Header = (props) => {
                         </button>
                     </div>
                     <div className="option-box" style={searchbar ? {display:"flex"}:{display:"none"}}>
-                            <button className="option-button">
-                                <span className="option-text">숙소</span>
-                            </button>
-                            <button className="option-button">
-                                <span className="option-text">체험</span>
-                            </button>
+                            <Link to="/s">
+                                <button className="option-button">
+                                    <span className="option-text">숙소</span>
+                                </button>
+                            </Link>
+                            <Link to="/s">
+                                <button className="option-button">
+                                    <span className="option-text">체험</span>
+                                </button>
+                            </Link>
                         {onlineExp()}
                     </div>
                 </div>
                 <div className="flex3">
                     <div className="login-box">
                         <div className="etc">
-                            <a href="#" className="host no-underline">
+                            <Link to="#" className="host no-underline">
                                 <div>호스트 되기</div>
-                            </a>
+                            </Link>
                             <button className="lang-button">
                                 <div><Lang /></div>
                             </button>
@@ -134,7 +138,7 @@ const Header = (props) => {
                         <div className="searchbar2" onClick={toggle_calendar}>
                             <div role="button" className="inputs">
                                 <label className="search-label">체크인</label>
-                                <div className="placeholder font">게스트 추가</div>
+                                <div className="placeholder font">날짜 입력</div>
                             </div>
                             <div className="calendar-box" style={openCalendar ? {display:"flex"}:{display:"none"}}>
                                 <Calendar />
@@ -144,7 +148,7 @@ const Header = (props) => {
                         <div className="searchbar3" onClick={toggle_calendar}>
                             <div role="button" className="inputs">
                                 <label className="search-label">체크아웃</label>
-                                <div className="placeholder font">게스트 추가</div>
+                                <div className="placeholder font">날짜 입력</div>
                             </div>
                         </div>
                         <div className="line"></div>

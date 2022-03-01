@@ -246,3 +246,7 @@
     display: inline-block;
     z-index: 1;
 }
+
+.link-style {
+    text-decoration: none;
+}

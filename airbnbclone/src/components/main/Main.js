@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useRef} from "react";
 import "./Main.css";
 import { ReactComponent as SearchIcon} from "../../assets/search_icon.svg";
 import { ReactComponent as Lang} from "../../assets/lang.svg";
@@ -8,19 +8,42 @@ import { ReactComponent as Logo} from "../../assets/logo.svg";
 import TravelCard from "./TravelCard";
 import ExpCard from "./ExpCard";
 import Header from "../Header";
-
+import Calendar from "../Calendar";
+import { Link } from "react-router-dom";
 
 const Main = () => {
 
     const [scrollPos, setScrollPos] = useState(0);
     const [isSearch, setIsSearch] = useState(false);
+    const [openCalendar, setOpenCalendar] = useState(false);
+    const toggle_calendar = () => {
+        setOpenCalendar(true);
+    }
+    const calendarRef= useRef(null);
 
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+            
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setOpenCalendar(false);
+                }
+            }
+    
+            
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+    useOutsideAlerter(calendarRef);
     return (
         <div>
             <aside className="corona">
-                <a href="#" >
+                <Link to="#" >
                     <span className="font">에어비엔비의 코로나19 대응 방안에 대한 최신 정보를 확인하세요.</span>
-                </a>
+                </Link>
             </aside>
             <div className="toggle_header" style={scrollPos < 95 ? {top: "-150px"} :{top: "0px"}}>
                 <Header pageType={"main"} onSelectSearch={setIsSearch} setScrollPos={setScrollPos}/>
@@ -30,36 +53,40 @@ const Main = () => {
                     <div className="nav-bar-main">
                         <div className="flex1-main">
                             <div className="space1-main">
-                                <a className="logo-image-main" href="#">
+                                <Link className="logo-image-main" to="#">
                                     <div>
                                         <Logo />
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="flex2-main">
                             <div className="option-box-main">
+                                <Link to="/s">
                                     <button className="option-button-main">
                                         <span className="option-text-main">숙소</span>
                                     </button>
+                                </Link>
+                                <Link to="/s">
                                     <button className="option-button-main">
                                         <span className="option-text-main">체험</span>
                                     </button>
-                                    <div>
-                                        <a href="#" className="no-underline text1-main">
-                                            <div className="option-text-main">
-                                                온라인 체험
-                                            </div>
-                                        </a>
-                                    </div>
+                                </Link>
+                                <div>
+                                    <Link to="#" className="no-underline text1-main">
+                                        <div className="option-text-main">
+                                            온라인 체험
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                         <div className="flex3-main">
                             <div className="login-box-main">
                                 <div className="etc-main">
-                                    <a href="#" className="host-main no-underline">
+                                    <Link to="#" className="host-main no-underline">
                                         <div>호스트 되기</div>
-                                    </a>
+                                    </Link>
                                     <button className="lang-button-main">
                                         <div><Lang /></div>
                                     </button>
@@ -89,17 +116,20 @@ const Main = () => {
                                 </div>
                             </div>
                             <div className="line"></div>
-                            <div className="searchbar2">
-                                <label className="search-label">체크인</label>
-                                <div>
-                                    <input placeholder="날짜 입력"/>
+                            <div className="searchbar2" onClick={toggle_calendar} style={{position: "relative"}}>
+                                <div role="button" className="inputs">
+                                    <label className="search-label">체크인</label>
+                                    <div className="placeholder font">날짜 입력</div>
+                                </div>
+                                <div ref={calendarRef} className="calendar-box-main" style={openCalendar ? {display:"flex"}:{display:"none"}}>
+                                    <Calendar />
                                 </div>
                             </div>
                             <div className="line"></div>
-                            <div className="searchbar3">
-                                <label className="search-label">체크아웃</label>
-                                <div>
-                                    <input placeholder="날짜 입력"/>
+                            <div className="searchbar3" onClick={toggle_calendar}>
+                                <div role="button" className="inputs">
+                                    <label className="search-label">체크아웃</label>
+                                    <div className="placeholder font">날짜 입력</div>
                                 </div>
                             </div>
                             <div className="line"></div>
@@ -124,11 +154,11 @@ const Main = () => {
                     <div className="grid1">
                         <div className="grid1-1">
                             <div className="flex4">
-                                <a href="#" className="no-underline">
+                                <Link to="/s" className="no-underline">
                                     <span className="more-button">
                                         <p style={{"fontWeight": 800}}>유연한 검색</p>
                                     </span>
-                                </a>
+                                </Link>
                                 
                                 <h1 className="text"><span>
                                     에어비엔비가<br/> 여행지를 찾아드릴게요!
@@ -203,9 +233,9 @@ const Main = () => {
                     <div className="head4">
                         호스팅에 관해<br/> 궁금하신 점이<br/> 있나요?
                     </div>
-                    <a href="#">
+                    <Link to="#">
                         <div className="link-button">슈퍼호스트에게 물어보세요</div>
-                    </a>
+                    </Link>
                 </div>
             </div>
                 

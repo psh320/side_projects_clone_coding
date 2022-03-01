@@ -84,7 +84,6 @@
     font-size: 14px;
     padding: 0px 16px;
     flex: 1 1 auto;
-
 }
 
 .space1 {
@@ -312,4 +311,13 @@
     overflow: hidden auto !important;
     padding: 16px 32px !important;
     align-items: center;
+}
+.no_border {
+    border: none;
+}
+
+.placeholder {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 100;
 }

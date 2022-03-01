@@ -10,14 +10,15 @@ const GoogleMap = (props) => {
     const ref = useRef(null);
     useEffect(()=> {
         set_map_height(ref.current.offsetHeight);
-    });
+    },[]);
     return (
         <div className="googlemap" ref={ref}>
             <Map
             google={props.google}
             zoom={8}
             style={mapStyles}
-            initialCenter={{ lat: 0, lng: 0}}
+            initialCenter={{ lat: 37.56, lng: 127}}
+            scrollwheel={true}
             />
         </div>
     );
