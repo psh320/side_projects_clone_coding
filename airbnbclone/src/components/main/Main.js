@@ -23,14 +23,11 @@ const Main = () => {
 
     function useOutsideAlerter(ref) {
         useEffect(() => {
-            
             function handleClickOutside(event) {
                 if (ref.current && !ref.current.contains(event.target)) {
                     setOpenCalendar(false);
                 }
             }
-    
-            
             document.addEventListener("mousedown", handleClickOutside);
             return () => {
                 document.removeEventListener("mousedown", handleClickOutside);

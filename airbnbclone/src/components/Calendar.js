@@ -4,24 +4,25 @@ import './Calendar.css';
 import 'react-dates/initialize';
 import { DayPickerRangeController } from 'react-dates';
 import moment from 'moment';
+import { selectCheckin } from '../actions';
+import {useSelector, useDispatch} from 'react-redux';
 
 const Calendar = () => {
-
-    const [dates, setDates] = useState({ startDate: null, endDate: null });
+    const dispatch = useDispatch();
+    const checkdate = useSelector((state) => state.search)
     const defaultFocusedInput = "startDate";
     const [focusedInput, setFocusedInput] = useState(defaultFocusedInput);
     const handleDatesChange = (dates) => {
-        setDates(dates);
+        dispatch(selectCheckin(dates));
       };
     const onFocusChange = (focusedInput) => {
-        console.log(onFocusChange);
         setFocusedInput(focusedInput);
     };
     return (
         <div className="calendar-component">
             <DayPickerRangeController 
-                startDate={dates.startDate}
-                endDate={dates.endDate}
+                startDate={checkdate.date.startDate}
+                endDate={checkdate.date.endDate}
                 onDatesChange={handleDatesChange}
                 focusedInput={focusedInput || defaultFocusedInput}
                 onFocusChange={onFocusChange}
