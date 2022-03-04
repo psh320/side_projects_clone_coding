@@ -10,9 +10,11 @@ import ExpCard from "./ExpCard";
 import Header from "../Header";
 import Calendar from "../Calendar";
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux';
+import moment from "moment";
 
 const Main = () => {
-
+    const checkdate = useSelector((state) => state.search)
     const [scrollPos, setScrollPos] = useState(0);
     const [isSearch, setIsSearch] = useState(false);
     const [openCalendar, setOpenCalendar] = useState(false);
@@ -116,7 +118,7 @@ const Main = () => {
                             <div className="searchbar2" onClick={toggle_calendar} style={{position: "relative"}}>
                                 <div role="button" className="inputs">
                                     <label className="search-label">체크인</label>
-                                    <div className="placeholder font">날짜 입력</div>
+                                    <div className="placeholder font">{checkdate.date.startDate == null ? "날짜 입력" : moment(checkdate.date.startDate).format('MM월 DD일')}</div>
                                 </div>
                                 <div ref={calendarRef} className="calendar-box-main" style={openCalendar ? {display:"flex"}:{display:"none"}}>
                                     <Calendar />
@@ -126,7 +128,7 @@ const Main = () => {
                             <div className="searchbar3" onClick={toggle_calendar}>
                                 <div role="button" className="inputs">
                                     <label className="search-label">체크아웃</label>
-                                    <div className="placeholder font">날짜 입력</div>
+                                    <div className="placeholder font">{checkdate.date.endDate == null ? "날짜 입력" : moment(checkdate.date.endDate).format('MM월 DD일')}</div>
                                 </div>
                             </div>
                             <div className="line"></div>

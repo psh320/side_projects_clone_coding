@@ -7,8 +7,19 @@ import { ReactComponent as Logo} from "../assets/logo.svg";
 import { ReactComponent as SearchIcon} from "../assets/search_icon.svg";
 import "./Header.css";
 import Calendar from './Calendar';
+import {useSelector} from 'react-redux';
+import moment from "moment";
+import styled from 'styled-components';
+
+const Placeholder = styled.div`
+        font-family: airbnb_cereal_book;
+        color: ${props => props.isNull ? '#717171' : 'black'};
+        font-size: 14px;
+        font-weight: ${props => props.isNull ? '100' : '600'};
+    `
 
 const Header = (props) => {
+    const checkdate = useSelector((state) => state.search)
     const [searchbar, SetSearchbar] = useState(false);
     const [scrollPos, setScrollPos] = useState(0);
     const updateScroll = () => {
@@ -138,7 +149,9 @@ const Header = (props) => {
                         <div className="searchbar2" onClick={toggle_calendar}>
                             <div role="button" className="inputs">
                                 <label className="search-label">체크인</label>
-                                <div className="placeholder font">날짜 입력</div>
+                                <Placeholder isNull={checkdate.date.startDate == null}>
+                                    {checkdate.date.startDate == null ? "날짜 입력" : moment(checkdate.date.startDate).format('MM월 DD일')}
+                                </Placeholder>
                             </div>
                             <div className="calendar-box" style={openCalendar ? {display:"flex"}:{display:"none"}}>
                                 <Calendar />
@@ -148,7 +161,9 @@ const Header = (props) => {
                         <div className="searchbar3" onClick={toggle_calendar}>
                             <div role="button" className="inputs">
                                 <label className="search-label">체크아웃</label>
-                                <div className="placeholder font">날짜 입력</div>
+                                <Placeholder isNull={checkdate.date.endDate == null}>
+                                    {checkdate.date.endDate == null ? "날짜 입력" : moment(checkdate.date.endDate).format('MM월 DD일')}
+                                </Placeholder>
                             </div>
                         </div>
                         <div className="line"></div>
@@ -173,6 +188,7 @@ const Header = (props) => {
         
         
     );
+
 }
 
 export default Header;
