@@ -241,6 +241,7 @@
 }
 
 .searchbar4{
+    position: relative;
     flex-grow: 1;
     flex-basis: 0;
     padding: 14px 32px 14px 32px;

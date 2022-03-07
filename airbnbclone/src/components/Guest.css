@@ -1,0 +1,77 @@
+.guest-box {
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    border-radius: 32px;
+    width: 311px;
+    padding: 16px 32px;
+    background-color: white;
+    box-shadow: 0px 6px 20px rgb(0 0 0 / 20%);
+    margin-top: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-left: -165px;
+}
+
+.guest-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 4px;
+    color:rgb(34 34 34);
+}
+
+.guest-row:not(:last-child) {
+    border-bottom: 1px solid rgb(235, 235, 235) !important;
+}
+
+.guest-botton-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 104px;
+    height: 32px;
+}
+
+.guest-text1 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.guest-text2 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.plusminus {
+    width: 32px !important;
+    height: 32px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(176, 176, 176) !important;
+    color: rgb(113, 113, 113) !important;
+    font-family: inherit !important;
+    font-size: 16px;
+    font-weight: 800;
+    outline: none !important;
+    touch-action: manipulation !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgb(255, 255, 255) !important;
+    border-radius: 50% !important;
+}

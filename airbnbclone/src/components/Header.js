@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link} from 'react-router-dom';
+import {Link , useNavigate} from 'react-router-dom';
 import { ReactComponent as Lang} from "../assets/lang.svg";
 import { ReactComponent as ThreeLine} from "../assets/three_line.svg";
 import { ReactComponent as UserShape} from "../assets/user_shape.svg";
@@ -7,18 +7,14 @@ import { ReactComponent as Logo} from "../assets/logo.svg";
 import { ReactComponent as SearchIcon} from "../assets/search_icon.svg";
 import "./Header.css";
 import Calendar from './Calendar';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import moment from "moment";
-import styled from 'styled-components';
-
-const Placeholder = styled.div`
-        font-family: airbnb_cereal_book;
-        color: ${props => props.isNull ? '#717171' : 'black'};
-        font-size: 14px;
-        font-weight: ${props => props.isNull ? '100' : '600'};
-    `
+import {Placeholder} from "../styles"
+import { updateLocation } from "../actions";
 
 const Header = (props) => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const checkdate = useSelector((state) => state.search)
     const [searchbar, SetSearchbar] = useState(false);
     const [scrollPos, setScrollPos] = useState(0);
@@ -137,12 +133,12 @@ const Header = (props) => {
             </div>
 
             <div className="header-form" style={searchbar ? {display:"block"}:{display:"none"}}>
-                <form id="search">
+                <form id="search" >
                     <div className="search-bar" id="searchbar">
                         <div className="searchbar1">
                             <div>
                                 <label className="search-label">위치</label>
-                                <input className="no_border" placeholder="어디로 여행가세요?"/>
+                                <input className="no_border" placeholder="어디로 여행가세요?" value={checkdate.location} onChange={(e) => dispatch(updateLocation(e.target.value))} />
                             </div>
                         </div>
                         <div className="line"></div>
@@ -174,7 +170,7 @@ const Header = (props) => {
                             </div>
 
                             <div className="submit">
-                                <button className="search-button1">
+                                <button className="search-button1" form="search">
                                     <div className="search-icon1">
                                         <SearchIcon />
                                     </div>
