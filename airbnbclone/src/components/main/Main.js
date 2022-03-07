@@ -22,12 +22,16 @@ const Main = () => {
     const [scrollPos, setScrollPos] = useState(0);
     const [isSearch, setIsSearch] = useState(false);
     const [openCalendar, setOpenCalendar] = useState(false);
+    const [openGuest, setOpenGuest] = useState(false);
     const toggle_calendar = () => {
         setOpenCalendar(true);
     }
+    const toggle_guest = () => {
+        setOpenGuest(true);
+    }
     const calendarRef= useRef(null);
-
-    function useOutsideAlerter(ref) {
+    const guestRef= useRef(null);
+    function useOutsideAlerterCal(ref) {
         useEffect(() => {
             function handleClickOutside(event) {
                 if (ref.current && !ref.current.contains(event.target)) {
@@ -40,7 +44,23 @@ const Main = () => {
             };
         }, [ref]);
     }
-    useOutsideAlerter(calendarRef);
+
+    function useOutsideAlerterGuest(ref) {
+        useEffect(() => {
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setOpenGuest(false);
+                }
+            }
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+
+    useOutsideAlerterCal(calendarRef);
+    useOutsideAlerterGuest(guestRef);
     return (
         <div>
             <aside className="corona">
@@ -141,11 +161,11 @@ const Main = () => {
                             </div>
                             <div className="line"></div>
                             <div className="searchbar4">
-                                <div role="button" className="inputs">
+                                <div role="button" className="inputs" onClick={toggle_guest}>
                                     <label className="search-label">인원</label>
                                     <div className="placeholder font">게스트 추가</div>
                                 </div>
-                                <div><Guest /></div>
+                                <div ref={guestRef} style={openGuest ? {display:"flex"}:{display:"none"}}><Guest /></div>
 
                                 <div className="submit">
                                     <button className="search-button1">
