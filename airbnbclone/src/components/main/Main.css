@@ -13,7 +13,6 @@
 }
 
 .corona {
-    min-width: 1300px;
     width: auto;
     text-align: center;
     padding-top: 18px;
@@ -28,7 +27,6 @@
 }
 .nav-bar-main {
     display: flex;
-    min-width: 1300px;
     min-height: 80px;
     padding-left: 80px;
     padding-right: 80px;
@@ -64,6 +62,7 @@
     justify-content: center;
     align-items: center;
     height:80px;
+    min-width: 250px;
 }
 
 .option-button-main {
@@ -289,4 +288,32 @@
 
 .inputs {
     cursor: pointer;
+}
+
+
+@media screen and (min-width: 1440px) {
+    .corona {
+        min-width: 1300px;
+    }
+    .nav-bar-main {
+        min-width: 1300px;
+    }
+    .banner3-box2 {
+        grid-template-columns: minmax(0,1fr)  minmax(0,1fr);
+    }
+}
+
+@media screen and (max-width: 1128px) {
+    .banner3-box2 {
+        grid-template-columns: minmax(0,1fr);
+    }
+ 
+}
+
+@media screen and (max-width: 950px) {
+    
+}
+
+@media screen and (max-width: 744px) {
+    
 }

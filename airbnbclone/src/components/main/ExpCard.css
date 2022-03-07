@@ -29,3 +29,18 @@
     font-weight: 600;
     font-family: airbnb_cereal_book;
 }
+
+@media screen and (max-width: 1440px) {
+    .banner2-box2{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+@media screen and (max-width: 1128px) {
+    .banner2-box2{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+    .banner2-item {
+        margin-top: 10px;
+    }
+}
