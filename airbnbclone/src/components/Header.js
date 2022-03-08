@@ -40,7 +40,7 @@ const Header = (props) => {
     const toggle_calendar = () => {
         setOpenCalendar(true);
     }
-
+    
     const onlineExp = () => {
         if (props.pageType == "main") {
             return (
