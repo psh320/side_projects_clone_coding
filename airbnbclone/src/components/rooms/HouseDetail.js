@@ -6,6 +6,9 @@ import { ReactComponent as HouseLocation} from "../../assets/facility_svg/house_
 import { ReactComponent as SelfCheckin} from "../../assets/facility_svg/self_checkin.svg";
 import { ReactComponent as GoodCheckin} from "../../assets/facility_svg/good_checkin.svg";
 import { ReactComponent as DoubleBed} from "../../assets/double_bed.svg";
+import Calendar from "../Calendar";
+import GoogleMap from '../GoogleMap';
+
 const HouseDetail = () => {
     const [scrollPos, setScrollPos] = useState(0);
     const [isSearch, setIsSearch] = useState(false);
@@ -207,7 +210,7 @@ const HouseDetail = () => {
                         </div>
                     </div>
                     <div className="detail-row8">
-                        <div className="calendar">Calendar Library</div>
+                        <div className="calendar"><Calendar /></div>
                     </div>
                 </div>
 
@@ -412,7 +415,7 @@ const HouseDetail = () => {
                 </div>
 
                 <div className="detail3-row2">
-                    Google Map library
+                    <GoogleMap />
                 </div>
             </div>
         </div>

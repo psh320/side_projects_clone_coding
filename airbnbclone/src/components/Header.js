@@ -40,7 +40,10 @@ const Header = (props) => {
     const toggle_calendar = () => {
         setOpenCalendar(true);
     }
-    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate.push("/s")
+    }
     const onlineExp = () => {
         if (props.pageType == "main") {
             return (
@@ -133,7 +136,7 @@ const Header = (props) => {
             </div>
 
             <div className="header-form" style={searchbar ? {display:"block"}:{display:"none"}}>
-                <form id="search" >
+                <form id="search" onSubmit={handleSubmit}>
                     <div className="search-bar" id="searchbar">
                         <div className="searchbar1">
                             <div>

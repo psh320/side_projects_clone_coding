@@ -316,6 +316,7 @@
 .no_border {
     border: none;
 }
+input:focus {outline:none;}
 
 .placeholder {
     color: #717171;

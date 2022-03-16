@@ -1,16 +1,17 @@
 import React from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter,Routes, Route, Link} from 'react-router-dom';
 import Header from './Header';
-
+import Fish from './Fish';
+import './App.css'
 const App = () => {
 	return (
-		<div>
+		<div className="main">
 			
 			<BrowserRouter>
-				<div>
-					<Header />
-					{/* <Route path="/" exact component={MainPage} /> */}
-				</div>
+				<Header />
+				<Routes>	
+					<Route path="/" exact element={<Fish />} />
+				</Routes>
 			</BrowserRouter>
 		</div>
 		
