@@ -10,7 +10,6 @@ const House = (props) => {
         return props.data.map(house => {
             return(
             <div className="house-box">
-                <Link to="/rooms" className="link-style">
                 <div className="house-detail">
                     <div className="house-image">
                         <ImageSlider 
@@ -21,7 +20,9 @@ const House = (props) => {
                             showNavs={true}
                         />
                     </div>
+                    
                     <div className="house-info">
+                    <Link to="/rooms" className="link-style">
                         <div className="house-row">
                             <div className="house-row1">
                                 <div className="house-name font" style={{color: "black"}}>
@@ -49,10 +50,11 @@ const House = (props) => {
                                 </div>
                             </div>
                         </div>
-
+                        </Link>
                     </div>
+                    
                 </div>
-                </Link>
+                
             </div>
             );
         });

@@ -11,6 +11,7 @@ const GoogleMap = (props) => {
     useEffect(()=> {
         set_map_height(ref.current.offsetHeight);
     },[]);
+    
     return (
         <div className="googlemap" ref={ref}>
             <Map

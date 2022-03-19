@@ -42,7 +42,7 @@ const Header = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate.push("/s")
+        navigate("/s")
     }
     const onlineExp = () => {
         if (props.pageType == "main") {

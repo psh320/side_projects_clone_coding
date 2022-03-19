@@ -10,13 +10,14 @@ import ExpCard from "./ExpCard";
 import Header from "../Header";
 import Calendar from "../Calendar";
 import Guest from "../Guest";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import moment from "moment";
 import {Placeholder} from "../../styles"
 import { updateLocation } from "../../actions";
 
 const Main = () => {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const checkdate = useSelector((state) => state.search)
     const [scrollPos, setScrollPos] = useState(0);
@@ -58,6 +59,11 @@ const Main = () => {
             };
         }, [ref]);
     }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate("/s")
+    }
 
     useOutsideAlerterCal(calendarRef);
     useOutsideAlerterGuest(guestRef);
@@ -65,7 +71,7 @@ const Main = () => {
         <div>
             <aside className="corona">
                 <Link to="#" >
-                    <span className="font">에어비엔비의 코로나19 대응 방안에 대한 최신 정보를 확인하세요.</span>
+                    <span className="font corona-text">에어비엔비의 코로나19 대응 방안에 대한 최신 정보를 확인하세요.</span>
                 </Link>
             </aside>
             <div className="toggle_header" style={scrollPos < 95 ? {top: "-150px"} :{top: "0px"}}>
@@ -168,7 +174,7 @@ const Main = () => {
                                 <div ref={guestRef} style={openGuest ? {display:"flex"}:{display:"none"}}><Guest /></div>
 
                                 <div className="submit">
-                                    <button className="search-button1">
+                                    <button className="search-button1" onClick={handleSubmit}>
                                         <div className="search-icon1">
                                             <SearchIcon />
                                         </div>
